@@ -8,6 +8,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import NotFound from './Pages/NotFound';
 import MovieDetails from './Components/MovieDetails'
+import './Components/card.css'
 
 function App() {
   const [movies, setMovies] = useState(Data);

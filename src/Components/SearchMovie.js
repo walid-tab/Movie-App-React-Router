@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useId, useState } from 'react'
 import { Button, Container, Form, FormControl, Modal, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
@@ -12,6 +12,8 @@ function SearchMovie({Addmovie,search,setSearch}) {
   const [description, setDescription] = useState('')
   const [url, setUrl] = useState('')
   const [rate, setRate] = useState(0)
+  const id=useId()
+  console.log(id)
   return (
     <div>
         
@@ -40,13 +42,14 @@ function SearchMovie({Addmovie,search,setSearch}) {
           value={search}
           onChange={(e)=>setSearch(e.target.value)}
         />
+        
         <>
         <Button style={{width:'200px'}}variant="primary" onClick={handleShow}>Add Movie</Button>
-
+        
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add Movie</Modal.Title>
-        </Modal.Header>
+        </Modal.Header >
         <label>Title</label>
         <input  type="text" value={title} onChange={(e)=>setTitle(e.target.value)}/>
         <label>posterUrl</label>
@@ -54,17 +57,19 @@ function SearchMovie({Addmovie,search,setSearch}) {
         <label>Description</label>
         <input  type="text" value={description} onChange={(e)=>setDescription(e.target.value)}/>
         <label>Rating</label>
-        <input  type="text" value={rate} onChange={(e)=>setRate(e.target.value)}/>
+        <input  type="number" value={rate} onChange={(e)=>setRate(e.target.value)}/>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={()=>{Addmovie({id:Math.random(),title,url,description,rate});handleClose()}}>
+          <Button variant="primary" onClick={()=>{Addmovie({id:id,title,url,description,rate});handleClose()}}>
             Confirm
           </Button>
         </Modal.Footer>
       </Modal>
+      
         </>
+        
       </Form>
     </Navbar.Collapse>
   </Container>
