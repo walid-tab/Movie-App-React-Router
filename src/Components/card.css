@@ -29,7 +29,7 @@
 }
 
 .poster {
-	width: 100%;
+	width: 90%;
 	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -118,7 +118,7 @@
 .ticket__movie-slogan {
 	color: #999;
 	font-size: 0.9rem;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .ticket__current-rate {
@@ -134,7 +134,22 @@
 	width: 100%;
 	background: #2f2f2f;
 	color: white;
-	padding: 15px 0;
+	padding: 10px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 0;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	
+}
+
+.ticket__del-btn {
+	cursor: pointer;
+	width: 100%;
+	background: #7a0404;
+	color: white;
+	padding: 10px 0;
 	font-size: 1rem;
 	font-weight: bold;
 	text-transform: uppercase;

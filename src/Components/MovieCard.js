@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 
-function MovieCard({movie}) {
+function MovieCard({movie,handeleDelete}) {
   
   return (
     <div >
@@ -24,8 +24,8 @@ function MovieCard({movie}) {
           <p className="ticket__current-rate">{movie.rate}</p>
           <Link to={`/movies/${movie.id}`}>
           <button className="ticket__buy-btn"   >See more</button>
-
           </Link>
+          <button className="ticket__del-btn"  onClick={()=>handeleDelete(movie.id)} >Delete</button>
         </div>
       </div>
     </div>

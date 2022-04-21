@@ -62,7 +62,7 @@ function SearchMovie({Addmovie,search,setSearch}) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={()=>{Addmovie({id:id,title,url,description,rate});handleClose()}}>
+          <Button variant="primary" onClick={()=>{Addmovie({id:id,title,url,description,rate});handleClose();setTitle("");setUrl("");setDescription("");setRate("")}}>
             Confirm
           </Button>
         </Modal.Footer>
